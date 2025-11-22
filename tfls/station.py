@@ -1,4 +1,4 @@
-
+from custom_api import tfl_get
 
 class Station:
     def __init__(self, id, name, lat, lon, line):
@@ -23,20 +23,19 @@ class Station:
         return station_name in self.name
 
 
-def stoppoint_to_station(stop_point, line_id):
+def stoppoint_to_station(stop_point: dict, line_id: str):
     '''
     Convert StopPoint to Stations.
     '''
-    stop_point_dict = stop_point.as_dict()
-    name = stop_point_dict['common_name']
-    id = stop_point_dict['id']
-    lat = stop_point_dict['lat']
-    lon = stop_point_dict['lon']
+    name = stop_point['commonName']
+    id = stop_point['id']
+    lat = stop_point['lat']
+    lon = stop_point['lon']
 
     return Station(id, name, lat, lon, line_id)
 
 
-def get_stations_on_line(client, line_id):
-    stations_on_line = client.get_stop_points_by_line_id(line_id)
+def get_stations_on_line(client, line_id: str):
+    stations_on_line = tfl_get(f"/Line/{line_id}/StopPoints")
     return [stoppoint_to_station(stop_point, line_id)
             for stop_point in stations_on_line]
