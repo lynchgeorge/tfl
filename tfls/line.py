@@ -32,12 +32,12 @@ class Line:
                 return station
 
 
-def get_line_by_id(client, line_id):
-    stations = get_stations_on_line(client, line_id)
+def get_line_by_id(line_id):
+    stations = get_stations_on_line(line_id)
     return Line(line_id, stations)
 
 
-def get_lines(client):
+def get_lines():
     line_ids = get_line_ids()
-    return [get_line_by_id(client, line_id)
+    return [get_line_by_id(line_id)
             for line_id in line_ids]

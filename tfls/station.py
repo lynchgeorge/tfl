@@ -1,4 +1,5 @@
-from custom_api import tfl_get
+from tfls.custom_api import tfl_get
+
 
 class Station:
     def __init__(self, id, name, lat, lon, line):
@@ -35,7 +36,7 @@ def stoppoint_to_station(stop_point: dict, line_id: str):
     return Station(id, name, lat, lon, line_id)
 
 
-def get_stations_on_line(client, line_id: str):
+def get_stations_on_line(line_id: str):
     stations_on_line = tfl_get(f"/Line/{line_id}/StopPoints")
     return [stoppoint_to_station(stop_point, line_id)
             for stop_point in stations_on_line]

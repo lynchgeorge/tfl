@@ -7,14 +7,6 @@ def verify():
     return 'tfls is working!'
 
 
-def get_client():
-    token = ApiToken(
-        os.getenv("app_id"),
-        os.getenv("app_key")
-    )
-    return Client(token)
-
-
 def get_line_ids():
     return [
         'victoria',

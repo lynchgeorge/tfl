@@ -7,5 +7,6 @@ import dotenv
 dotenv.load_dotenv()
 
 from .core import *
+from .custom_api import *
 from .station import *
 from .line import *
