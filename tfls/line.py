@@ -17,6 +17,10 @@ class Line:
     def __eq__(self, other):
         return  repr(self) == repr(other)
 
+    def __iter__(self):
+        for station in self.stations:
+            yield station
+
     def get_station(self, station_name):
         '''
         Iterates through the list of stations on the line,
