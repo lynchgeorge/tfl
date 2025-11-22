@@ -1,8 +1,22 @@
-body {
+/* Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: Arial, sans-serif;
-    margin: 40px;
 }
 
+/* Header container */
+header {
+    background-color: #3684eb; /* Deep royal blue */
+    height: 70px;              /* Adjust height as needed */
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Blank UI container */
 #app {
-    max-width: 800px;
+    width: 100%;
+    height: calc(100% - 70px); /* Fill remaining height under header */
 }

@@ -1,1 +1,2 @@
-console.log("Flask backend UI loaded!");
+// Blank JS for now
+console.log("UI with header loaded");
