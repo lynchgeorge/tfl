@@ -1,2 +1,2 @@
 # tfl
-This is not an attempt to DDOS TFL, we promise.
+This is not an attempt to [censored], we promise.
